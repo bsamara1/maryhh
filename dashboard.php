@@ -12,7 +12,7 @@ try {
     $totalPedidos = $db->fetch("SELECT COUNT(*) as total FROM pedidos")['total'];
     $totalClientes = $db->fetch("SELECT COUNT(*) as total FROM clientes")['total'];
     $totalProdutos = $db->fetch("SELECT COUNT(*) as total FROM produtos")['total'];
-    $totalVendas = $db->fetch("SELECT SUM(total) as total FROM pedidos WHERE status = 'concluido'")['total'] ?? 0;
+    $totalVendas = $db->fetch("SELECT COALESCE(SUM(total), 0) as total FROM pedidos WHERE status = 'concluido'")['total'] ?? 0;
     
     // Pedidos recentes
     $pedidosRecentes = $db->fetchAll("

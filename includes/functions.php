@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
@@ -11,7 +13,7 @@ function isAdmin() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header("Location: /login.php");
+        header("Location: login.php");
         exit();
     }
 }
@@ -19,7 +21,7 @@ function requireLogin() {
 function requireAdmin() {
     requireLogin();
     if (!isAdmin()) {
-        header("Location: /dashboard.php");
+        header("Location: dashboard.php");
         exit();
     }
 }

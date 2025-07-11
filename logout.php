@@ -2,7 +2,9 @@
 require_once 'includes/functions.php';
 
 // Destruir sessão
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 session_destroy();
 
 // Limpar cookies se existirem
@@ -11,6 +13,6 @@ if (isset($_COOKIE[session_name()])) {
 }
 
 // Redirecionar para login
-header("Location: /login.php");
+header("Location: login.php");
 exit();
 ?>
