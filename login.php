@@ -37,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 );
                 
                 showAlert('Login realizado com sucesso!', 'success');
-                header("Location: /dashboard.php");
+                header("Location: dashboard.php");
+                header("Location: dashboard.php");
                 exit();
             } else {
                 $error = 'Email ou senha incorretos.';

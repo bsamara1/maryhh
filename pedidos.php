@@ -275,11 +275,11 @@ include 'includes/sidebar.php';
 
 <script>
 function viewOrder(id) {
-    window.location.href = `/pedido_detalhes.php?id=${id}`;
+    window.location.href = `pedido_detalhes.php?id=${id}`;
 }
 
 function editOrder(id) {
-    window.location.href = `/pedido_editar.php?id=${id}`;
+    window.location.href = `pedido_editar.php?id=${id}`;
 }
 
 function updateStatus(id, currentStatus) {
@@ -289,12 +289,12 @@ function updateStatus(id, currentStatus) {
 }
 
 function printOrder(id) {
-    window.open(`/pedido_imprimir.php?id=${id}`, '_blank');
+    window.open(`pedido_imprimir.php?id=${id}`, '_blank');
 }
 
 function exportPedidos() {
     const params = new URLSearchParams(window.location.search);
-    window.open(`/exports/pedidos.php?${params.toString()}`, '_blank');
+    window.open(`exports/pedidos.php?${params.toString()}`, '_blank');
 }
 
 // Submissão do formulário de status
@@ -304,7 +304,7 @@ document.getElementById('statusForm').addEventListener('submit', function(e) {
     const formData = new FormData(this);
     showLoading();
     
-    fetch('/actions/pedido_update_status.php', {
+    fetch('actions/pedido_update_status.php', {
         method: 'POST',
         body: formData
     })

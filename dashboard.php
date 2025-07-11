@@ -109,7 +109,7 @@ include 'includes/sidebar.php';
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Baixo Estoque</h3>
-                <a href="/estoque.php" class="btn btn-sm btn-outline">Ver Todos</a>
+                <a href="estoque.php" class="btn btn-sm btn-outline">Ver Todos</a>
             </div>
             <?php if (!empty($produtosBaixoEstoque)): ?>
                 <div class="table-container">
@@ -144,7 +144,7 @@ include 'includes/sidebar.php';
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Pedidos Recentes</h3>
-            <a href="/pedidos.php" class="btn btn-sm btn-outline">Ver Todos</a>
+            <a href="pedidos.php" class="btn btn-sm btn-outline">Ver Todos</a>
         </div>
         
         <?php if (!empty($pedidosRecentes)): ?>
