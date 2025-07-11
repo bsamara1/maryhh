@@ -1,22 +1,16 @@
 <?php
-session_start(); // Iniciar a sessão
+require_once 'includes/functions.php';
 
-// Eliminar todas as variáveis de sessão
-$_SESSION = array();
-
-// Se existir um cookie de sessão, apaga-o
-if (ini_get("session.use_cookies")) {
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
-    );
-}
-
-// Destruir a sessão
+// Destruir sessão
+session_start();
 session_destroy();
 
-// Redirecionar para a página de login (ou homepage)
-header("Location: Login/index.html");
+// Limpar cookies se existirem
+if (isset($_COOKIE[session_name()])) {
+    setcookie(session_name(), '', time() - 3600, '/');
+}
+
+// Redirecionar para login
+header("Location: /login.php");
 exit();
 ?>
