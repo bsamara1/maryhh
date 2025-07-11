@@ -1,0 +1,129 @@
+
+
+/* Fonte e centralização */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #f5e6f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* Caixa do formulário */
+
+.retangulo {
+
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    width: 450px;
+    height: 710px;
+}
+
+/* Título */
+.retangulo h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #892e82;
+}
+
+/* Labels e Inputs */
+.retangulo label {
+  font-weight: 500;
+  color: #333;
+}
+
+.retangulo input {
+    width: 94%;
+    padding: 12px;
+  border: 1px solid ;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  background-color: white;
+  color: #333;
+}
+
+
+/* Botão */
+.retangulo button {
+  width: 100%;
+  padding: 14px;
+  background-color: #e782a0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 25px;
+}
+
+.retangulo button:hover {
+  background-color: #892e82;
+}
+
+/* Link Criar Conta */
+.criar-conta {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.criar-conta .t4 {
+  font-weight: bold;
+  color: #e782a0;
+  text-decoration: none;
+}
+
+.criar-conta .t4:hover {
+  color: #892e82;
+  text-decoration: underline;
+}
+
+/* Outros textos */
+.t0 {
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.t1,
+.t2,
+.t3 {
+  font-size: 15px;
+  text-align: center;
+  margin: 10px 0;
+  color: black;
+}
+
+/* Links gerais */
+a {
+  color: #e782a0;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #892e82;
+}
+
+/* Logo (se usar) */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

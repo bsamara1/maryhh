@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão Mary Human Hair - Pedidos</title>
+  <link rel="stylesheet" href="gestao.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <button class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="topbar-left">
+      <img class="logo" src="./MaryHumanHair.png" width="210" height="60" alt="Logo Mary Human Hair">
+    </div>
+
+    <nav class="topbar-nav">
+      <a href="gestao.html" id="menu-inicio">Inicio</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="visao.html">Visão Geral</a>
+      <a href="ajuda.html">Ajuda</a>
+    </nav>
+
+    <div class="topbar-right">
+
+      <div class="search-wrapper">
+        <input type="text" class="search" placeholder="Pesquisar...">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <div class="user">
+        <img src="mary-removebg-preview (1).png" alt="Foto de perfil de Mary">
+        <span class="admin">
+          <strong>Mary Admin</strong>
+          <span class="ad">maryhumanhair@gmail.com</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar + Conteúdo -->
+  <div class="container">
+    <aside class="sidebar">
+      <nav>
+        <a href="gestao.html"><i class="fas fa-tachometer-alt"></i> Painel de Administração</a>
+        <a href="pedidos.php"><i class="fas fa-box"></i> Pedidos</a>
+        <a href="clientes.php"><i class="fas fa-users"></i> Clientes</a>
+        <a href="produtos.php"><i class="fas fa-boxes-stacked"></i> Produtos e Estoque</a>
+        <a href="relatorio.html"><i class="fas fa-chart-line"></i> Relatórios de Vendas</a>
+        <a href="formUtilizador.html"><i class="fas fa-user-cog"></i> Adicionar Utilizador</a>
+        <a href="atualizarUtilizador.php"><i class="fas fa-sync-alt"></i> Atualizar dados dos utilizadores</a>
+        <a href="logout.php" class="edit-icon" title="Sair/Logout">
+          <i class="fas fa-sign-out-alt"></i> Sair
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- Cards (início) -->
+    <div class="dashboard-cards" id="inicio-section" style="display: flex;">
+      <div class="card-row">
+        <div class="card">
+          <h3>Total de Pedidos</h3>
+          <p>128</p>
+        </div>
+
+        <div class="card">
+          <h3>Clientes Ativos</h3>
+          <p>47</p>
+        </div>
+
+        <div class="card">
+          <h3>Produtos no Estoque</h3>
+          <p>314</p>
+        </div>
+
+        <div class="card">
+          <h3>Funcionários</h3>
+          <p>34</p>
+        </div>
+
+        <div class="card1" id="resumo-pedidos">
+          <h3>Últimos Pedidos</h3>
+          <div id="tabela-ultimos">Carregando...</div>
+        </div>
+
+      </div>
+
+      <div class="extra-row">
+        <div class="vendas-mapa">
+          <!-- Gráfico -->
+          <div class="large-card">
+            <h3>📈 Vendas Mensais</h3>
+            <canvas id="graficoVendas"></canvas>
+          </div>
+
+          <!-- Mapa -->
+          <div class="mapa-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17530.343324038542!2d-23.53139026924781!3d14.910846899443701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935985817a589a1%3A0x80ad16466595adc8!2sPalmarejo%2C%20Cape%20Verde%2C%20Praia!5e1!3m2!1sen!2scv!4v1750872749900!5m2!1sen!2scv"
+              height="300" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <script>
+        document.getElementById('menu-inicio').addEventListener('click', function (e) {
+          e.preventDefault();
+          document.getElementById('inicio-section').style.display = 'flex';
+        });
+      </script>
+
+      <script>
+        const menuLinks = document.querySelectorAll('.sidebar nav a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            menuLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+      </script>
+
+      <script>
+        const ctx = document.getElementById('graficoVendas').getContext('2d');
+        const graficoVendas = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+              label: 'Pedidos',
+              data: [12, 19, 8, 15, 23, 16],
+              borderColor: '#892e82',
+              backgroundColor: 'rgba(137, 46, 130, 0.1)',
+              fill: true,
+              tension: 0.4,
+              pointBackgroundColor: '#892e82',
+              pointBorderColor: '#fff',
+              pointHoverRadius: 6,
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: true,
+                labels: {
+                  color: '#333',
+                  font: { size: 14 }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { stepSize: 5 }
+              }
+            }
+          }
+        });
+      </script>
+
+      <!-- -->
+      <script>
+        // Carrega o conteúdo do PHP dinamicamente
+        fetch('ultimos_pedidos.php')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tabela-ultimos').innerHTML = data;
+          })
+          .catch(error => {
+            document.getElementById('tabela-ultimos').innerHTML = "<p>Erro ao carregar pedidos.</p>";
+            console.error('Erro:', error);
+          });
+      </script>
+
+
+      <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const topbarNav = document.querySelector('.topbar-nav');
+
+        menuToggle.addEventListener('click', () => {
+          topbarNav.classList.toggle('show');
+        });
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const searchInput = document.querySelector('.search');
+
+          function aplicarFiltro() {
+            const termo = searchInput.value.toLowerCase();
+
+            // Blocos de conteúdo a pesquisar
+            const blocos = document.querySelectorAll(
+              '.card, .card1, .large-card, .mapa-container, .sidebar nav a, .topbar-nav a'
+            );
+
+            blocos.forEach(bloco => {
+              const texto = bloco.textContent.toLowerCase();
+              bloco.style.display = termo === '' || texto.includes(termo) ? '' : 'none';
+            });
+          }
+
+          // Pressionar Enter ativa a pesquisa
+          searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              aplicarFiltro();
+              searchInput.blur(); // tira o foco depois de pressionar Enter
+            }
+          });
+
+          // Ou sair do campo (perder foco) também ativa a pesquisa
+          searchInput.addEventListener('blur', () => {
+            aplicarFiltro();
+          });
+        });
+      </script>
+
+
+
+
+
+</body>
+
+</html>

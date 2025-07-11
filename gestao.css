@@ -1,0 +1,597 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  border-radius: 10px 10px 10px 10px;
+
+
+}
+
+.container {
+  display: flex;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-logo {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #892e82;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+}
+
+.topbar-nav a {
+  font-family: 'jost', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #892e82;
+  letter-spacing: 1px;
+
+
+}
+
+.topbar-nav a:hover {
+  color: #892e82;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-right: 40px;
+  color: #892e82;
+}
+
+.topbar-right a {
+  color: #892e82;
+  text-decoration: none;
+  font-family: 'jost', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.edit-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #892e82;
+  text-decoration: none;
+
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.search {
+  padding-left: 37px;
+  /* espaço interno para o ícone */
+  height: 34px;
+  border: 1px solid #892e82;
+  border-radius: 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  background-color: white;
+  color: #892e82;
+}
+
+.search::placeholder {
+  color: #892e82;
+}
+
+.search:focus {
+  border-color: #4b0c46;
+  /* Borda mais escura ou diferente */
+  box-shadow: 0 0 4px rgba(137, 46, 130, 0.4);
+  outline: none;
+}
+
+/* Também muda a cor da lupa quando o input está focado */
+.search:focus+.search-icon {
+  color: #4b0c46;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #892e82;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding-right: 5px;
+}
+
+.admin {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  /* Espaço vertical pequeno entre as linhas */
+  font-size: 14px;
+}
+
+.admin strong {
+  font-weight: bold;
+}
+
+.ad {
+  font-size: 12px;
+  color: #666;
+  /* Opcional: tom de cinza para o email */
+  margin-top: 2px;
+  /* Ou 0 se quiser ainda mais colado */
+}
+
+/* ====== Sidebar ====== */
+.sidebar {
+  margin-top: 35px;
+  top: 0;
+  left: 0;
+  width: 440px;
+  background-color: #892e82;
+  height: 77vh;
+  padding: 26px;
+  padding-top: 30px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 15px 0px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background-color: #4b0c46;
+  border-radius: 5px;
+  padding-left: 10px;
+  color: white;
+}
+
+.sidebar nav a.active {
+  background-color: #4b0c46;
+  font-weight: bold;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: #892e82;
+  transition: transform 0.3s ease;
+  min-width: 200px;
+
+  height: 120px;/
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+iframe {
+  border-radius: 10px 10px 10px 10px;
+  width: 100%;
+}
+
+.card1 {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: #892e82;
+  transition: transform 0.3s ease;
+  width: 460px;
+  min-width: 120px;
+  height: 210px;
+}
+
+
+.vendas-mapa {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* para responsividade */
+}
+
+/* Opcional: ajuste a largura dos blocos */
+.large-card,
+.mapa-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 480px;
+}
+
+.large-card {
+  background: white;
+  padding: 20px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 30px auto;
+  width: 440px;
+  height: 300px;
+  max-width: 190px;
+  color: #333;
+  margin-top: -2px;
+  display: block;
+  max-width: 90%;
+
+
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Estilo geral do card */
+#resumo-pedidos {
+  background: #fff;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+
+}
+
+/* Tabela */
+.tabela-ultimos {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #444;
+
+}
+
+/* Cabeçalho */
+.tabela-ultimos thead tr {
+  background-color: #892e82;
+  color: white;
+  text-align: left;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.tabela-ultimos thead th {
+  padding: 10px 12px;
+
+}
+
+/* Linhas da tabela */
+.tabela-ultimos tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela-ultimos tbody tr:hover {
+  background-color: #f1e6f9;
+  cursor: pointer;
+}
+
+/* Células */
+.tabela-ultimos tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+
+}
+
+/* Badges para status */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+/* Cores para status */
+.badge.concluido {
+  background-color: #28a745;
+  /* verde */
+}
+
+.badge.processando {
+  background-color: #ffc107;
+  /* amarelo */
+  color: #222;
+}
+
+.badge.pendente {
+  background-color: #17a2b8;
+  /* azul */
+  color: white;
+}
+
+.badge.cancelado {
+  background-color: #dc3545;
+  /* vermelho */
+}
+
+/* RESPONSIVO GERAL */
+@media (max-width: 992px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .topbar-left,
+  .topbar-nav,
+  .topbar-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .topbar-nav a {
+    font-size: 15px;
+    padding: 5px 8px;
+  }
+
+  .topbar-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-wrapper {
+    width: 90%;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 15px 20px;
+  }
+
+  .sidebar a {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .card1,
+  .large-card {
+    width: 90%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .mapa-container iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  .user {
+    padding-left: 0;
+    border: none;
+  }
+
+  .admin {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar-nav {
+    flex-direction: column;
+  }
+
+  .topbar-nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .sidebar a {
+    font-size: 16px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .tabela-ultimos {
+    font-size: 12px;
+  }
+}
+
+/* Botão do menu (hambúrguer) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #892e82;
+  cursor: pointer;
+}
+
+/* Mostrar botão e esconder menu em telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .topbar-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .topbar-nav.show {
+    display: flex;
+  }
+}
+
+/* Perfil*/
+/* Container centralizado com margem */
+.container2 {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(137, 46, 130, 0.2);
+  font-family: 'Jost', sans-serif;
+  color: #4b0c46;
+}
+
+/* Título */
+.container2 h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #892e82;
+}
+
+/* Card com padding e borda suave */
+.card2 {
+  padding: 25px 30px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #faf5fb;
+  box-shadow: 0 3px 8px rgba(137, 46, 130, 0.1);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Destacar os labels (strong) */
+.card2 strong {
+  color: #892e82;
+}
+
+/* Espaço entre os parágrafos */
+.card2 p {
+  margin-bottom: 16px;
+}
+
+/* Botões com cores e efeito hover */
+.card2 button {
+  background-color: #892e82;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  margin: 10px 10px 0 0;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card2 button:hover {
+  background-color: #4b0c46;
+}
+
+/* Responsivo simples */
+@media (max-width: 500px) {
+  .container2 {
+    margin: 20px 15px;
+    padding: 15px;
+  }
+
+  .card2 {
+    padding: 20px;
+  }
+
+  .card2 button {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+}
